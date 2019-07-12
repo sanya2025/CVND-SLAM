@@ -95,7 +95,7 @@ class robot:
             lm = self.landmarks[li]
             dx = lm[0]-self.x+self.measurement_noise*self.rand()
             dy = lm[1]-self.y+self.measurement_noise*self.rand()
-            if (dx**2 + dy**2 <= self.measurement_range**2): 
+            if abs(dx) <= self.measurement_range and abs(dy) <= self.measurement_range:
                 measurements.append([li,dx,dy])
                
                 
